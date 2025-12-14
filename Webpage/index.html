@@ -1,0 +1,282 @@
+<!--
+Futuristic Dark One-Page Website
+Pure HTML + CSS + minimal JS
+No framework required
+-->
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEO FUTURE</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --cyan: #22d3ee;
+      --pink: #46efef;
+      --border: rgba(255,255,255,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Background glow */
+    .glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow::before,
+    .glow::after {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      filter: blur(160px);
+      opacity: 0.35;
+      border-radius: 50%;
+    }
+    .glow::before {
+      background: var(--cyan);
+      top: -200px;
+      left: -200px;
+    }
+    .glow::after {
+      background: var(--pink);
+      right: -200px;
+      top: 30%;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      letter-spacing: 0.2em;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .nav a {
+      margin-left: 32px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .nav a:hover { color: var(--cyan); }
+
+    section {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: auto;
+      padding: 120px 32px;
+    }
+
+    /* Hero */
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .gradient {
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      margin-top: 32px;
+      max-width: 520px;
+      color: var(--muted);
+    }
+    .actions {
+      margin-top: 48px;
+      display: flex;
+      gap: 24px;
+    }
+    .btn {
+      padding: 16px 32px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+    }
+    .btn.primary {
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      color: #000;
+      border: none;
+    }
+
+    /* About */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 64px;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    /* Works */
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 64px;
+    }
+    .thumb {
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, rgba(34,211,238,0.3), rgba(217,70,239,0.3));
+      border-radius: 16px;
+      transition: transform .4s;
+    }
+    .work:hover .thumb { transform: scale(1.05); }
+
+    /* Contact */
+    form {
+      margin-top: 48px;
+      max-width: 520px;
+      display: grid;
+      gap: 20px;
+    }
+    input, textarea {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      color: var(--fg);
+      font-size: 14px;
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--cyan); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 40px 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <header>
+    <div class="nav">
+      <div class="logo">NEO FUTURE</div>
+      <div>
+        <a href="#about">ABOUT</a>
+        
+        <a href="#contact">CONTACT</a>
+      </div>
+    </div>
+  </header>
+
+ 
+
+  
+</section>
+<img
+    src="工作區域 1@300x-1511.jpg"
+    width="100%" 
+    alt="未來抽象藝術視覺"
+    class="hero-image"
+  />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>一頁式背景</title>
+    <link rel="stylesheet" href="style.css"> <!-- 引入CSS文件 -->
+</head>
+<body>
+    <!-- 頁面內容 -->
+</body>
+</html>
+
+
+  
+
+  <section id="about">
+    <div class="grid-2">
+      <div>
+        <h2>ABOUT THE CONCEPT</h2>
+        <p style="margin-top:24px;color:var(--muted)">再帶入未來感中的設計裡，同時也不忘了加入光和影,更加能夠觀看到植物的紋理細節。
+
+ 而在眾多的材質中，金屬材質能更好的體現出光跟影的交錯，同樣也能映射出其他物品與光影的相容交錯 
+</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">Metal</div>
+        <div class="card">future</div>
+        <div class="card">Breathing sensation</div>
+        <div class="card">light and shadow</div>
+      </div>
+    </div>
+  </section>
+  
+
+  <img
+    src="工作區域 5@300x-1511.jpg"
+    width="100%" 
+    alt="未來抽象藝術視覺"
+    class="hero-image"
+
+
+  
+  </section>
+
+ 
+
+
+<section id="contact">
+<h2>CONTACT</h2>
+<form>
+<input placeholder="Name" />
+<input placeholder="Email" />
+<textarea rows="4" placeholder="Message"></textarea>
+<button class="btn primary">SEND MESSAGE</button>
+</form>
+</section>
+
+
+<footer>
+© 2025 A11 Botanical Garden of National Museum of Natural Science
+</footer>
+</body>
+</html>
